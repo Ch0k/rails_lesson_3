@@ -19,7 +19,7 @@ INSERT INTO categories(title) VALUES
 ('backend'), 
 ('devops');
 
-INSERT INTO tests(title, category_id) VALUES
+INSERT INTO tests(title, level, category_id) VALUES
 ('ruby', 2, 2), 
 ('html', 1, 2), 
 ('css', 1, 3), 
@@ -33,15 +33,15 @@ INSERT INTO questions(body, test_id) VALUES
 ('Какая команда docker запускает докер контейнер?', 5),
 ('Нужно ли устанавливаеть агент на хосте для ansible?', 4);
 
-SELECT * FROM tests WHERE level = 2 AND level = 3
+SELECT * FROM tests WHERE level = 2 AND level = 3;
 
-SELECT * FROM questions WHERE test_id = 2
+SELECT * FROM questions WHERE test_id = 2;
 
-SELECT * FROM tests WHERE level = 2 AND level = 3
+SELECT * FROM tests WHERE level = 2 or level = 3;
 
 DELETE * FROM questions WHERE test_id = 1;
 
-UPDATE tests SET title='ruby' and level=1 WHERE title='ruby';
+UPDATE tests SET title = 'ruby lang' and level = 1 WHERE title='ruby';
 
 SELECT * FROM tests JOIN categories ON tests.category_id = categories.id;
 
